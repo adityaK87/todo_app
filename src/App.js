@@ -12,9 +12,17 @@ function App() {
 				My_Todo_List
 			</h1>
 
-			{toggleForm ? <TaskInput /> : <EditTodo />}
-
-			<TaskList />
+			{toggleForm ? (
+				<>
+					<TaskInput />
+					<TaskList />
+				</>
+			) : (
+				<>
+					<EditTodo />
+					<h1>Edit your todo item</h1>
+				</>
+			)}
 		</div>
 	);
 }

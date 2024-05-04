@@ -7,9 +7,11 @@ const TaskList = () => {
 	console.log(todos);
 	return (
 		<div>
-			{todos.map((todo) => (
-				<TodoCard key={todo.id} {...todo} />
-			))}
+			{todos.length !== 0 ? (
+				todos.map((todo) => <TodoCard key={todo.id} {...todo} />)
+			) : (
+				<h1>Enter your first todo item</h1>
+			)}
 		</div>
 	);
 };

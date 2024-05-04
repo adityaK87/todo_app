@@ -4,7 +4,6 @@ import TodoCard from "./TodoCard/TodoCard";
 import { useSelector } from "react-redux";
 const TaskList = () => {
 	const { todos } = useSelector((state) => state.todos);
-	console.log(todos);
 	return (
 		<div>
 			{todos.length !== 0 ? (

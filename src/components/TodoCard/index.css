@@ -1,0 +1,41 @@
+.todo-card {
+	display: flex;
+	padding-top: 8px 0px;
+	justify-content: space-between;
+	margin: 10px 0px;
+	align-items: center;
+	min-width: 30rem;
+	border-radius: 4px;
+	background-color: #fee2e2;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.toggle-complete {
+	font-weight: 600;
+	text-decoration: line-through;
+}
+.toggle-incomplete {
+	font-weight: 600;
+}
+
+.todo-btns {
+	display: flex;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: 1rem;
+	gap: 20px;
+}
+.delete-task {
+	color: #b91c1c;
+	cursor: pointer;
+}
+
+.edit-task {
+	color: #b45309;
+	cursor: pointer;
+}
+
+.completed-task {
+	color: #047857;
+	cursor: pointer;
+}

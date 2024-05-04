@@ -18,14 +18,26 @@
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.btn {
+.btn,
+.edit-btn {
 	padding: 12px 24px;
 	border-radius: 4px;
 	font-weight: 700;
 	color: #ffffff;
+}
+.btn {
 	background-color: #3b82f6;
 }
 .btn:hover {
 	cursor: pointer;
 	background-color: #1d4ed8;
+}
+
+.edit-btn {
+	background-color: orange;
+}
+
+.edit-btn:hover {
+	cursor: pointer;
+	background-color: #d58e09;
 }

@@ -1,4 +1,4 @@
-import { nanoid, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Function to load todos from localStorage
 const loadTodosFromLocalStorage = () => {

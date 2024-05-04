@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { BsTrashFill, BsCheckSquare } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
-
 import "./index.css";
-const TodoCard = (props) => {
+
+import { todoDeleted, toggleInputForm } from "../../slices/todoSlice";
+import { useDispatch } from "react-redux";
+
+const TodoCard = ({ title, id }) => {
 	const [toggleComplete, setToggleComplete] = useState(false);
+	const dispatch = useDispatch();
 
 	return (
 		<div className="todo-card">
@@ -13,13 +17,27 @@ const TodoCard = (props) => {
 					className={
 						toggleComplete ? "toggle-complete" : "toggle-incomplete"
 					}>
-					{props.title}
+					{title}
 				</h3>
 			</div>
 			<div className="todo-btns">
-				<BsCheckSquare className="completed-task" size={20} />
-				<FaEdit className="edit-task" size={20} />
-				<BsTrashFill className="delete-task" size={20} />
+				<BsCheckSquare
+					onClick={() => setToggleComplete(!toggleComplete)}
+					className="completed-task"
+					size={20}
+				/>
+				<FaEdit
+					onClick={() =>
+						dispatch(toggleInputForm({ id: id, title: title }))
+					}
+					className="edit-task"
+					size={20}
+				/>
+				<BsTrashFill
+					onClick={() => dispatch(todoDeleted(id))}
+					className="delete-task"
+					size={20}
+				/>
 			</div>
 		</div>
 	);

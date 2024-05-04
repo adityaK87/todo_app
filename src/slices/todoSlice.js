@@ -14,7 +14,6 @@ const loadTodosFromLocalStorage = () => {
 	}
 };
 
-console.log("object", loadTodosFromLocalStorage());
 // Function to save todos to localStorage
 const saveTodosToLocalStorage = (todos) => {
 	try {
@@ -25,16 +24,7 @@ const saveTodosToLocalStorage = (todos) => {
 };
 
 const initialState = {
-	todos: loadTodosFromLocalStorage() || [
-		{
-			id: nanoid(),
-			title: "Do Exercise at morning",
-		},
-		{
-			id: nanoid(),
-			title: "revise JavaScript",
-		},
-	],
+	todos: loadTodosFromLocalStorage(),
 	toggleForm: true,
 	editTodo: {},
 };

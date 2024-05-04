@@ -1,18 +1,38 @@
 import { nanoid, createSlice } from "@reduxjs/toolkit";
 
+// Function to load todos from localStorage
+const loadTodosFromLocalStorage = () => {
+	try {
+		const todos = localStorage.getItem("todos");
+		if (todos === null) {
+			return undefined;
+		}
+		return JSON.parse(todos);
+	} catch (err) {
+		console.error("Error loading todos from localStorage:", err);
+		return undefined;
+	}
+};
+
+console.log("object", loadTodosFromLocalStorage());
+// Function to save todos to localStorage
+const saveTodosToLocalStorage = (todos) => {
+	try {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	} catch (err) {
+		console.error("Error saving todos to localStorage:", err);
+	}
+};
+
 const initialState = {
-	todos: [
+	todos: loadTodosFromLocalStorage() || [
 		{
 			id: nanoid(),
-			title: "make tea",
+			title: "Do Exercise at morning",
 		},
 		{
 			id: nanoid(),
-			title: "wash clothes",
-		},
-		{
-			id: nanoid(),
-			title: "read book",
+			title: "revise JavaScript",
 		},
 	],
 	toggleForm: true,
@@ -25,11 +45,13 @@ const todoSlice = createSlice({
 	reducers: {
 		todoAdded: (state, action) => {
 			state.todos = [...state.todos, action.payload];
+			saveTodosToLocalStorage(state.todos);
 		},
 		todoDeleted: (state, action) => {
 			state.todos = state.todos.filter(
 				(todo) => todo.id !== action.payload
 			);
+			saveTodosToLocalStorage(state.todos);
 		},
 		toggleInputForm: (state, action) => {
 			state.toggleForm = !state.toggleForm;
@@ -41,6 +63,7 @@ const todoSlice = createSlice({
 			);
 			todoToUpdate.title = action.payload.title;
 			state.toggleForm = !state.toggleForm;
+			saveTodosToLocalStorage(state.todos);
 		},
 	},
 });

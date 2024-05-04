@@ -1,11 +1,29 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import "./index.css";
+
+import { nanoid } from "@reduxjs/toolkit";
+import { todoAdded } from "../../slices/todoSlice";
+import { useDispatch } from "react-redux";
+
 const TaskInput = () => {
-	const [input, setInput] = useState("");
+	const [inputText, setInputText] = useState("");
 	const dispatch = useDispatch();
 
-	const handleSubmit = () => {
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (/^\s*$/.test(inputText)) {
+			alert("Enter a task");
+			setInputText("");
+			return;
+		} else {
+			dispatch(
+				todoAdded({
+					id: nanoid(),
+					title: inputText,
+				})
+			);
+			setInputText("");
+		}
 		console.log("HandleSubmit");
 	};
 
@@ -13,8 +31,8 @@ const TaskInput = () => {
 		<form onSubmit={handleSubmit} className="input-container">
 			<input
 				type="text"
-				value={input}
-				onChange={(e) => setInput(e.target.value)}
+				value={inputText}
+				onChange={(e) => setInputText(e.target.value)}
 				className="input-field"
 				placeholder="Add todo"
 			/>

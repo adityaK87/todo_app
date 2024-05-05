@@ -3,13 +3,13 @@
 ## 📌 Introduction
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-this todo app is built with React, React-Redux, and Redux Toolkit, enables users to add, delete, and edit tasks seamlessly. The combination of these technologies ensures a smooth user experience and efficient state management.
+This todo app is built with React, React-Redux, and Redux Toolkit, enables users to add, delete, and edit tasks seamlessly. The combination of these technologies ensures a smooth user experience and efficient state management. Todos are stored into localStorage so if user reloads the application todos will not be deletd.
 
 ## 🚀 View Live Demo
 
 <img src="https://img.shields.io/badge/website-up-greene" />
 
-<pre><center><a href="https://todo-app-azure-two.vercel.app"><b>todo-app-azure-two.vercel.app</b></a></center></pre>
+<pre><center><a href="https://todo-app-azure-two.vercel.app" target="_blank"><b>todo-app-azure-two.vercel.app</b></a></center></pre>
 
 ## 👨‍💻 Tech Stack Used
 

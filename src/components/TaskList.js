@@ -7,7 +7,7 @@ const TaskList = () => {
 	return (
 		<div>
 			{todos?.length !== 0 ? (
-				todos.map((todo) => <TodoCard key={todo.id} {...todo} />)
+				todos?.map((todo) => <TodoCard key={todo.id} {...todo} />)
 			) : (
 				<h1>Enter your first todo item</h1>
 			)}

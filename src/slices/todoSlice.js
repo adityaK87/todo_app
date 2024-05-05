@@ -7,7 +7,7 @@ const loadTodosFromLocalStorage = () => {
 		if (todos === null) {
 			return;
 		}
-		return Array.from(JSON.parse(todos));
+		return JSON.parse(todos);
 	} catch (err) {
 		console.error("Error loading todos from localStorage:", err);
 		return;
@@ -24,7 +24,7 @@ const saveTodosToLocalStorage = (todos) => {
 };
 
 const initialState = {
-	todos: loadTodosFromLocalStorage(),
+	todos: loadTodosFromLocalStorage() || [],
 	toggleForm: true,
 	editTodo: {},
 };

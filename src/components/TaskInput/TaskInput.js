@@ -24,7 +24,6 @@ const TaskInput = () => {
 			);
 			setInputText("");
 		}
-		console.log("HandleSubmit");
 	};
 
 	return (

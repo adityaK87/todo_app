@@ -7,7 +7,7 @@ const loadTodosFromLocalStorage = () => {
 		if (todos === null) {
 			return;
 		}
-		return JSON.parse(todos);
+		return Array.from(JSON.parse(todos));
 	} catch (err) {
 		console.error("Error loading todos from localStorage:", err);
 		return;

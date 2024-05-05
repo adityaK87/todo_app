@@ -5,12 +5,12 @@ const loadTodosFromLocalStorage = () => {
 	try {
 		const todos = localStorage.getItem("todos");
 		if (todos === null) {
-			return undefined;
+			return;
 		}
 		return JSON.parse(todos);
 	} catch (err) {
 		console.error("Error loading todos from localStorage:", err);
-		return undefined;
+		return;
 	}
 };
 

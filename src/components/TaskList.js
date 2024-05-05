@@ -6,7 +6,7 @@ const TaskList = () => {
 	const { todos } = useSelector((state) => state.todos);
 	return (
 		<div>
-			{todos.length !== 0 ? (
+			{todos?.length !== 0 ? (
 				todos.map((todo) => <TodoCard key={todo.id} {...todo} />)
 			) : (
 				<h1>Enter your first todo item</h1>

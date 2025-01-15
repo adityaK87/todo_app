@@ -3,7 +3,7 @@
 ## 📌 Introduction
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-This todo app is built with React, React-Redux, and Redux Toolkit, enables users to add, delete, and edit tasks seamlessly. The combination of these technologies ensures a smooth user experience and efficient state management. Todos are stored into localStorage so if user reloads the application todos will not be deletd.
+This to-do app is built with React, React-Redux, and Redux Toolkit, enabling users to seamlessly add, delete, and edit tasks. Combining these technologies ensures a smooth user experience and efficient state management. Todos are stored in localStorage so if the user reloads the application todos will not be deleted.
 
 ## 🚀 View Live Demo
 
@@ -14,7 +14,7 @@ This todo app is built with React, React-Redux, and Redux Toolkit, enables users
 ## 👨‍💻 Tech Stack Used
 
 -   React
--   redux/tookit
+-   redux/toolkit
 -   React-Redux
 -   Hooks
 -   JavaScript
